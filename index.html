@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BCS401 - ADA 4th Semester</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6f9;
+    transition:0.3s;
+}
+header{
+    background:linear-gradient(45deg,#141e30,#243b55);
+    color:white;
+    padding:20px;
+    text-align:center;
+    position:relative;
+}
+.toggle-btn{
+    position:absolute;
+    right:20px;
+    top:20px;
+    padding:6px 10px;
+    border:none;
+    cursor:pointer;
+    border-radius:6px;
+}
+.search-box{
+    margin-top:10px;
+}
+.search-box input{
+    padding:8px;
+    width:70%;
+    border-radius:6px;
+    border:none;
+}
+.search-box button{
+    padding:8px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+.container{
+    padding:20px;
+}
+.card{
+    background:white;
+    margin-bottom:15px;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.card h2{
+    margin:0;
+    cursor:pointer;
+    color:#243b55;
+}
+.content{
+    display:none;
+    margin-top:10px;
+}
+.content a{
+    display:block;
+    margin:6px 0;
+    padding:8px;
+    background:#4CAF50;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+.content a:hover{
+    background:#45a049;
+}
+audio,video{
+    width:100%;
+    margin-top:10px;
+}
+ul{
+    padding-left:20px;
+}
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+.dark-mode .card{
+    background:#1f1f1f;
+}
+.dark-mode .card h2{
+    color:#4CAF50;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>BCS401</h1>
+<p>Analysis and Design of Algorithms - 4th Semester</p>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Search Module...">
+<button onclick="searchModule()">Search</button>
+</div>
+
+<button class="toggle-btn" onclick="toggleDark()">🌙</button>
+</header>
+
+<div class="container">
+
+<!-- MODULE 1 -->
+<div class="card">
+<h2 onclick="toggle('m1')">Module 1</h2>
+<div id="m1" class="content">
+<a href="BCS401-module-1-writtten.pdf" target="_blank">📄 Notes PDF</a>
+<ul>
+<li>What is Algorithm</li>
+<li>Fundamentals of Algorithmic Problem Solving</li>
+<li>Analysis Framework</li>
+<li>Asymptotic Notations & Efficiency Classes</li>
+<li>Mathematical Analysis of Non-Recursive Algorithms</li>
+<li>Mathematical Analysis of Recursive Algorithms</li>
+<li>Selection Sort</li>
+<li>Bubble Sort</li>
+<li>Sequential Search</li>
+<li>Brute Force String Matching</li>
+</ul>
+</div>
+</div>
+
+<!-- MODULE 2 -->
+<div class="card">
+<h2 onclick="toggle('m2')">Module 2</h2>
+<div id="m2" class="content">
+<a href="BCS401-module-2-written.pdf" target="_blank">📄 Notes PDF</a>
+<ul>
+<li>Exhaustive Search</li>
+<li>Travelling Salesman Problem</li>
+<li>Knapsack Problem</li>
+<li>Insertion Sort</li>
+<li>Topological Sorting</li>
+<li>Merge Sort</li>
+<li>Quick Sort</li>
+<li>Strassen’s Matrix Multiplication</li>
+</ul>
+</div>
+</div>
+
+<!-- MODULE 3 -->
+<div class="card">
+<h2 onclick="toggle('m3')">Module 3</h2>
+<div id="m3" class="content">
+<a href="BCS401-module-3-written.pdf" target="_blank">📄 Notes PDF</a>
+<ul>
+<li>Balanced Search Trees</li>
+<li>AVL Trees</li>
+<li>Heaps</li>
+<li>Heap Sort</li>
+<li>Counting Sort</li>
+<li>Horspool’s Algorithm</li>
+</ul>
+</div>
+</div>
+
+<!-- MODULE 4 -->
+<div class="card">
+<h2 onclick="toggle('m4')">Module 4</h2>
+<div id="m4" class="content">
+<a href="BCS401-module-4-written.pdf" target="_blank">📄 Notes PDF</a>
+<ul>
+<li>Knapsack Problem</li>
+<li>Warshall Algorithm</li>
+<li>Floyd Algorithm</li>
+<li>Prim's Algorithm</li>
+<li>Kruskal's Algorithm</li>
+<li>Dijkstra's Algorithm</li>
+<li>Huffman Trees and Coding</li>
+</ul>
+</div>
+</div>
+
+<!-- MODULE 5 -->
+<div class="card">
+<h2 onclick="toggle('m5')">Module 5</h2>
+<div id="m5" class="content">
+<a href="BCS401-module-5-written.pdf" target="_blank">📄 Notes PDF</a>
+<ul>
+<li>Decision Trees</li>
+<li>P, NP and NP-Complete Problems</li>
+<li>N-Queens Problem</li>
+<li>Subset Problem</li>
+<li>Knapsack using Branch and Bound</li>
+<li>Knapsack using Approximation Method</li>
+</ul>
+</div>
+</div>
+
+<!-- QUESTION PAPERS -->
+<div class="card">
+<h2 onclick="toggle('qp')">Question Papers</h2>
+<div id="qp" class="content">
+<a href="BCS401-model-paper-set-1.pdf" target="_blank">📝 Model Paper</a>
+<a href="BCS401-regular-paper.pdf" target="_blank">📝 Regular Paper</a>
+</div>
+</div>
+
+</div>
+
+<script>
+function toggle(id){
+let x=document.getElementById(id);
+x.style.display=(x.style.display==="block")?"none":"block";
+}
+
+function toggleDark(){
+document.body.classList.toggle("dark-mode");
+}
+
+function searchModule(){
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.getElementsByClassName("card");
+
+for(let i=0;i<cards.length;i++){
+let title=cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+cards[i].style.display=title.includes(input)?"block":"none";
+}
+}
+</script>
+
+</body>
+</html>
